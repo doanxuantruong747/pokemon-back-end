@@ -10093,15 +10093,6 @@
                 "Water"
             ],
             "url": "http://localhost:5000/images/721.png"
-        },
-        {
-            "name": "test 722",
-            "types": [
-                "grass",
-                "poison"
-            ],
-            "id": 722,
-            "url": "http://localhost:5000/images/720.png"
         }
     ],
     "totalPokemons": 721

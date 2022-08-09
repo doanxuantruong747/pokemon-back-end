@@ -99,9 +99,9 @@ routes.get("/:id", async (req, res, next) => {
     result.forEach((pokemon) => {
         if (id === pokemon.id)
             dbDetail = { ...dbDetail, pokemon: pokemon };
-        if (id === first.id ? (pokemon.id) : (pokemon.id === (id - 1)))
+        if (id === first.id ? (pokemon.id) : (pokemon.id === id - 1))
             dbDetail = { ...dbDetail, previousPokemon: pokemon };
-        if ((id === last.id) ? (pokemon.id === last.id - id + 1) : (pokemon.id === (id + 1)))
+        if ((id === last.id) ? (pokemon.id === last.id - id + 1) : (pokemon.id === id + 1))
             dbDetail = { ...dbDetail, nextPokemon: pokemon };
     });
 
@@ -149,19 +149,19 @@ routes.post("", (req, res, next) => {
         })) return;
 
         // check Pokémon’s type is invalid
-        let index0 = newPokemon.types[0] ? newPokemon.types[0].toLowerCase() : null
-        let index1 = newPokemon.types[1] ? newPokemon.types[1].toLowerCase() : index0
-        let newPokemonType = [index0, index1]
+        // let index0 = newPokemon.types[0] ? newPokemon.types[0].toLowerCase() : null
+        // let index1 = newPokemon.types[1] ? newPokemon.types[1].toLowerCase() : index0
+        // let newPokemonType = [index0, index1]
 
-        const isSubset = (array1, array2) => array2.every((element) => array1.includes(element));
+        // const isSubset = (array1, array2) => array2.every((element) => array1.includes(element));
 
-        if ((isSubset(pokemonTypes, newPokemonType) === false) ||
-            (newPokemon.types.length === 0)
-        ) {
-            const exception = new Error(`Pokémon’s type is invalid`);
-            exception.statusCode = 401;
-            throw exception;
-        }
+        // if ((isSubset(pokemonTypes, newPokemonType) === false) ||
+        //     (newPokemon.types.length === 0)
+        // ) {
+        //     const exception = new Error(`Pokémon’s type is invalid`);
+        //     exception.statusCode = 401;
+        //     throw exception;
+        // }
 
         //Add new pokemon to book JS object
         data.push(newPokemon)
